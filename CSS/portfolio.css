@@ -1,0 +1,123 @@
+:root {
+    --mc: #987750;
+    --tc: #888;
+}
+
+.left-intro{
+    padding: 1em;
+}
+
+.left-intro h3{
+    color: var(--mc);
+    margin-bottom:2em;
+    display: inline;
+    padding-top: 30px;
+}
+
+.splitter{
+    width: 15%;
+    background-color: var(--tc);
+    height: 1px;
+}
+.projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.card{
+    position: relative;
+    width: 41%;
+    height: 30%;
+    margin: 2%;
+    margin-top: 5rem;
+    z-index: 1;
+}
+.card img{
+    object-fit: contain;
+    width: 100%;
+}
+.card p{
+    margin-bottom: .4em;
+}
+.card h4{
+    color: #ddd;
+}
+svg{
+    width :30px;
+    height:  40px;
+    padding-top: 10px;
+    margin-right: 20px;
+    animation: spin 2s linear infinite;
+
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.p-title{
+    display: flex;
+    align-items: center;
+}
+.overlayP {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.861);
+    transform: translateY(100%);
+    box-sizing: border-box;
+}
+.description {
+position: absolute;
+visibility: hidden;
+height:0%;
+right: 150%;
+top: 15%;
+width: 80%;
+transform: translateY(100%);
+box-sizing: border-box;
+background-color: transparent;
+font-size: 0.8em;
+}
+
+.description p{
+padding: 10px;
+background-color: transparent;
+color: white;
+
+}
+
+.card:hover .overlayP{
+height: 80%;
+transform: translateY(0%);
+transition: height 1.5s ease-out;
+} 
+
+.card:hover .description{
+right:20%;
+opacity: 1;
+visibility: visible;
+transform: translateY(0%);
+transition: right 1.5s ease-out;
+}
+
+@media screen and (min-width:400px) and (max-width:1000px){
+
+    .card{
+        width: 400px;
+
+    }
+
+    .description{
+        height: 0.75em;
+        
+    }
+
+}
